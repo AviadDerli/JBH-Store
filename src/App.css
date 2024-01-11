@@ -1,0 +1,130 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.itemList {
+  display: flex;
+  justify-content: center;
+  width: 750px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.cart {
+  width: 250px;
+  height: 500px;
+  border: 1px solid;
+}
+
+.content {
+  padding: 0 50px;
+  width: 700px;
+}
+.layout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px
+}
+
+
+.item-cart {
+  flex-direction: row;
+  width: 90%;
+  /* margin-left: -20px; */
+
+}
+
+.btn-cart{
+  display: flex;
+  flex-direction: column;
+}
+.recycle {
+  align-self: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.recycle>span {
+  background-color: #ffffff;
+  padding: 1px;
+}
+
+.scroll {
+  margin: 4px, 4px;
+  padding: 4px;
+  padding-top: 20px;
+  width: 97%;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+.popup {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay.close {
+  display: none;
+}

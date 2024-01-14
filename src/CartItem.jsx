@@ -1,6 +1,10 @@
-export default function CartItem({ item ,cart, setCart}) {
-  const { name, price, emoji,id } = item
-  
+import { useContext, useEffect } from "react"
+import DataContext from "./context/DataContext"
+
+export default function CartItem({ item }) {
+  const { name, price, emoji, id } = item
+  const { cart, setCart } = useContext(DataContext)
+
   const handlePlus = () => {
     let newCart = { ...cart }
     if (cart[id]) {
@@ -12,27 +16,29 @@ export default function CartItem({ item ,cart, setCart}) {
     setCart(newCart)
   }
   const handleMinus = () => {
-    if(cart[id]){
-      let newCart = { ...cart }      
-      if(newCart[id].amount==1){
+    if (cart[id]) {
+      let newCart = { ...cart }
+      if (newCart[id].amount == 1) {
         delete newCart[id]
         return setCart(newCart)
       }
-      newCart[id].amount-=1
+      newCart[id].amount -= 1
       setCart(newCart)
     }
   }
-  
+
   return (
     <div className="item item-cart">
       <h5>{name}</h5>
       <h4>{emoji}</h4>
       <h6>{price}</h6>
 
+      <div className='btn-cart'>
 
-      <button onClick={handlePlus}>+</button>
-      <span>{cart[id]?.amount || 0 }</span>
-      <button onClick={handleMinus}>-</button>
+        <button onClick={handlePlus}>+</button>
+        <span>{cart[id]?.amount || 0}</span>
+        <button onClick={handleMinus}>-</button>
+      </div>
     </div>
   )
 }
